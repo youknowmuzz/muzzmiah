@@ -11,7 +11,7 @@
 </head>
 <body>
 		<h2>Create<h2>
-<?php echo form_open('site/create');?> ?>
+<?php echo form_open('find/create') ?>
 <p>
 	<label for="title">Title:</label>
 	<input type= "text" name="title" id="title" />
@@ -33,7 +33,7 @@
 
 <?php if (isset($records)) : ?>  
 <?php foreach($records as $row) : ?>
-	<h2><?php echo anchor ('site/delete/$row->id, $row->title'), $row->title; ?> </h2>
+	<h2><?php echo anchor ('/find/$row->id, $row->title'), $row->title; ?> </h2>
 	<div> <?php echo $row->content; ?></div>
 	<?php endforeach; ?>
 	

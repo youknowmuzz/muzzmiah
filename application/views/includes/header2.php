@@ -18,10 +18,10 @@
 </form>
 	<table >
 		<tr>
-			<td><FORM METHOD="LINK" ACTION="<?php echo base_url() . 'index.php/site/'; ?>"><INPUT TYPE="submit" VALUE="Search"></td></FORM></FORM></td> 
-			<td><FORM METHOD="LINK" ACTION="<?php echo base_url() . 'index.php/site/add'; ?>"><INPUT TYPE="submit" VALUE="Add"></td></FORM></FORM></td> 
-			<td><form method="get" action="<?php echo base_url() . 'index.php/site/update'; ?>"><input type="submit" value="Edit"/></form></td> </form></td>
-			<td><form method="get" action="<?php echo base_url() . 'index.php/site/delete'; ?>"><input type="submit" value="Remove"/></form></td> </form></td>
+			<td><FORM METHOD="LINK" ACTION="<?php echo base_url() . 'index.php/find/'; ?>"><INPUT TYPE="submit" VALUE="Search"></td></FORM></FORM></td> 
+			<td><FORM METHOD="LINK" ACTION="<?php echo base_url() . 'index.php/find/add'; ?>"><INPUT TYPE="submit" VALUE="Add"></td></FORM></FORM></td> 
+			<td><form method="get" action="<?php echo base_url() . 'index.php/find/update'; ?>"><input type="submit" value="Edit"/></form></td> </form></td>
+			<td><form method="get" action="<?php echo base_url() . 'index.php/find/delete'; ?>"><input type="submit" value="Remove"/></form></td> </form></td>
 
 		</tr>
 
