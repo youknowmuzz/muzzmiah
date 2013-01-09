@@ -40,7 +40,7 @@ function add() {
 	$this->load->view('includes/template', $data);
 }
 
-public function addemployee () 
+public function addemployee() 
 {
 		$birth_date = $this->input->get('birth_date');
 		$first_name = $this->input->get('first_name');
@@ -75,7 +75,7 @@ function update()
 	else
 	{
 		$this->load->model('site_model');
-		$res = $this->site_model->getEmployeeData($emp_no);
+		$res = $this->site_model->EmployeeData($emp_no);
 
 		$data['rows'] = $res['rows'];
 		$data['emp_no'] = $emp_no;
@@ -127,7 +127,6 @@ function updateemployee()
 
 function delete()
 {
-
 	$emp_no = $this->input->get('emp_no');
 
 	$data['emp_no'] = $emp_no;
@@ -149,7 +148,7 @@ function deleteemployee()
 
 	$is_logged_in = $this->session->userdata('is_logged_in');
 	$data['is_logged_in'] = $is_logged_in;
-	$data['main_content'] = 'search_form';
+	$data['main_content'] = 'delete_view';
 	$this->load->view('includes/template', $data);
 }
 
