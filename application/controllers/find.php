@@ -19,8 +19,12 @@ function findemp()
 	$jobtitle = $this->input->get('jobtitle');
 
 	$this->load->model('site_model');
-	$res = $this->site_model->get_records($firstname, $lastname, $dept, $jobtitle);
-
+	if (!empty($firstname) && !empty($lastname) && !empty($dept) && !empty($jobtitle)) {
+		$res = $this->site_model->get_records($firstname, $lastname, $dept, $jobtitle);
+	} else {
+		$res['num_rows'] = 0;
+		$res['rows'] = 0;
+	}
 	$data['count'] = $res['num_rows'];
 	$data['results'] = $res['rows'];
 
