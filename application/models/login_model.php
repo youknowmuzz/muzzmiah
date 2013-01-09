@@ -5,6 +5,7 @@ class Login_model extends CI_Model{
         $this->load->database();
     }
     
+    //validates credentias sent in from controller
     public function validate()
     {
         // grab user input

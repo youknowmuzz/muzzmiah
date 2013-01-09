@@ -11,14 +11,15 @@ function index()
 
 }
 
+//find emp controller, echos out json
 function findemp()
 {
 	$firstname = $this->input->get('firstname');
 	$lastname = $this->input->get('lastname');
 	$dept = $this->input->get('dept');
 	$jobtitle = $this->input->get('jobtitle');
-
 	$this->load->model('site_model');
+	//checks to see if all fields are empty
 	if (!empty($firstname) && !empty($lastname) && !empty($dept) && !empty($jobtitle)) {
 		$res = $this->site_model->get_records($firstname, $lastname, $dept, $jobtitle);
 	} else {
@@ -31,7 +32,7 @@ function findemp()
 	echo json_encode($data);
 }
 
-
+// loads add employee view
 function add() {
 
 	$is_logged_in = $this->session->userdata('is_logged_in');
@@ -40,8 +41,9 @@ function add() {
 	$this->load->view('includes/template', $data);
 }
 
+//function to add employee to the database, using the add_record function in the site_model
 public function addemployee() 
-{
+{		
 		$birth_date = $this->input->get('birth_date');
 		$first_name = $this->input->get('first_name');
 		$last_name = $this->input->get('last_name');
@@ -58,6 +60,8 @@ public function addemployee()
 		
 	}
 
+//used to update employee data
+//loads update view and validates if employee number has been submitted.
 function update()
 {
 
@@ -69,8 +73,6 @@ function update()
 		$data['is_logged_in'] = $is_logged_in;
 		$data['main_content'] = 'update_view_noemp';
 		$this->load->view('includes/template', $data);
-
-
 	}
 	else
 	{
@@ -86,9 +88,9 @@ function update()
 		$this->load->view('includes/template', $data);
 
 	}
-	
-
 }
+
+//carries out the update employee database update
 function updateemployee()
 {
 
@@ -125,6 +127,7 @@ function updateemployee()
 
 }
 
+//loads delete view
 function delete()
 {
 	$emp_no = $this->input->get('emp_no');
@@ -137,6 +140,7 @@ function delete()
 	$this->load->view('includes/template', $data);
 }
 
+//deletes employee from database
 function deleteemployee()
 {
 	$emp_no = $this->input->get('emp_no');

@@ -7,12 +7,14 @@ class Login extends CI_Controller
 		$this->load->model('login_model');
 	}
 	
+	//loads login view
 	public function index()
 	{
 		$data['main_content'] = 'login_view';
 		$this->load->view('login_view');
 	}
 
+	//validates login credentials
 	public function validate_credentials()
 	{
 		
@@ -36,6 +38,7 @@ class Login extends CI_Controller
 		
 	}
 
+	//kills session to logout
 	public function logout()
 	{
 
